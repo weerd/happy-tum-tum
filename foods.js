@@ -611,6 +611,42 @@ const foods = [
     rating: 'low',
     servingSize: null,
   },
+  {
+    name: 'savoy cabbage',
+    category: '',
+    rating: 'high',
+    servingSize: null,
+  },
+  {
+    name: 'soy beans / soya beans',
+    category: '',
+    rating: 'high',
+    servingSize: null,
+  },
+  {
+    name: 'split peas',
+    category: '',
+    rating: 'high',
+    servingSize: null,
+  },
+  {
+    name: 'scallions / spring onions (bulb / white part)',
+    category: '',
+    rating: 'high',
+    servingSize: null,
+  },
+  {
+    name: 'shallots',
+    category: '',
+    rating: 'high',
+    servingSize: null,
+  },
+  {
+    name: 'taro',
+    category: '',
+    rating: 'high',
+    servingSize: null,
+  },
 ];
 
 // Export foods list in alphabetical order.
