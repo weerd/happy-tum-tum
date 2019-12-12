@@ -5,7 +5,7 @@ class CustomDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>FODMAP</title>
+          <title>FODMAP Food Reference</title>
 
           <meta
             name='viewport'
@@ -18,7 +18,7 @@ class CustomDocument extends Document {
           />
         </Head>
 
-        <body className='bg-blue-200'>
+        <body className='bg-gray-200 relative'>
           <Main />
           <NextScript />
         </body>
