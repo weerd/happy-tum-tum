@@ -112,8 +112,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-// className={classnames(
-//   'inline-block flex w-1/4 text-center',
-//   food.rating === 'low' ? 'bg-green-400' : 'bg-red-400',
-// )}
