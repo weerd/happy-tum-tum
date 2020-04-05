@@ -1,10 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import foods from '../foods';
-import UpArrowIcon from '../components/UpArrowIcon';
-import DownArrowIcon from '../components/DownArrowIcon';
-import Header from '../components/Header';
+import foods from '../resources/data/foods';
+import Header from '../resources/components/Header';
+import ArrowUpIcon from '../resources/components/ArrowUpIcon';
+import ArrowDownIcon from '../resources/components/ArrowDownIcon';
 
 import '../styles/tailwind.min.css';
 
@@ -19,14 +19,14 @@ class App extends React.Component {
   }
 
   findMatches = (wordToMatch, itemList) => {
-    return itemList.filter(item => {
+    return itemList.filter((item) => {
       const regex = new RegExp(wordToMatch, 'gi');
 
       return item.name.match(regex) || item.category.match(regex);
     });
   };
 
-  handleOnChange = event => {
+  handleOnChange = (event) => {
     const matches = this.findMatches(event.target.value, foods);
 
     this.setState({
@@ -35,7 +35,7 @@ class App extends React.Component {
     });
   };
 
-  handleOnSubmit = event => {
+  handleOnSubmit = (event) => {
     event.preventDefault();
   };
 
@@ -91,9 +91,9 @@ class App extends React.Component {
                       )}
                     >
                       {food.rating === 'low' ? (
-                        <DownArrowIcon className='h-6 w-6' />
+                        <ArrowDownIcon className='h-6 w-6' />
                       ) : (
-                        <UpArrowIcon className='h-6 w-6' />
+                        <ArrowUpIcon className='h-6 w-6' />
                       )}
 
                       <span className='ml-2 font-bold w-12'>

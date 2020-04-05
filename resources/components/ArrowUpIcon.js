@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const UpArrowIcon = ({ className }) => (
+const ArrowUpIcon = ({ className }) => (
   <svg
     className={classnames('fill-current', className)}
     xmlns='http://www.w3.org/2000/svg'
@@ -11,4 +11,4 @@ const UpArrowIcon = ({ className }) => (
   </svg>
 );
 
-export default UpArrowIcon;
+export default ArrowUpIcon;
