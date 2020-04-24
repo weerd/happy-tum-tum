@@ -2,11 +2,11 @@ import React from 'react';
 import classnames from 'classnames';
 
 import foods from '../resources/data/foods';
-import Header from '../resources/components/Header';
-import ArrowUpIcon from '../resources/components/ArrowUpIcon';
-import ArrowDownIcon from '../resources/components/ArrowDownIcon';
+import Header from '../resources/assets/components/Header';
+import ArrowUpIcon from '../resources/assets/components/ArrowUpIcon';
+import ArrowDownIcon from '../resources/assets/components/ArrowDownIcon';
 
-import '../styles/tailwind.min.css';
+// import '../styles/tailwind.min.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -19,14 +19,14 @@ class App extends React.Component {
   }
 
   findMatches = (wordToMatch, itemList) => {
-    return itemList.filter((item) => {
+    return itemList.filter(item => {
       const regex = new RegExp(wordToMatch, 'gi');
 
       return item.name.match(regex) || item.category.match(regex);
     });
   };
 
-  handleOnChange = (event) => {
+  handleOnChange = event => {
     const matches = this.findMatches(event.target.value, foods);
 
     this.setState({
@@ -35,7 +35,7 @@ class App extends React.Component {
     });
   };
 
-  handleOnSubmit = (event) => {
+  handleOnSubmit = event => {
     event.preventDefault();
   };
 
