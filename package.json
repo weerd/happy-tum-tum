@@ -1,5 +1,5 @@
 {
-  "name": "fodmap",
+  "name": "happy-tum-tum",
   "version": "1.0.0",
   "description": "",
   "author": "Diego Lorenzo <diego@diegolorenzo.com> (http://diegolorenzo.com)",
@@ -16,13 +16,12 @@
     "@zeit/next-css": "^1.0.1",
     "classnames": "^2.2.6",
     "next": "^9.3.5",
-    "next-compose-plugins": "^2.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
+    "@fullhuman/postcss-purgecss": "^2.1.2",
     "postcss-preset-env": "^6.7.0",
-    "tailwind": "^4.0.0"
+    "tailwindcss": "^1.3.5"
   }
 }
