@@ -6,7 +6,7 @@ class CustomDocument extends Document {
       <Html>
         <Head />
 
-        <body className='bg-gray-200 relative'>
+        <body className='bg-cream-500 relative'>
           <Main />
 
           <NextScript />
