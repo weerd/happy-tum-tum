@@ -1,10 +1,15 @@
 import Link from 'next/link';
+import classnames from 'classnames';
 
 import PropTypes from 'prop-types';
 
-const Header = ({ children }) => (
+const Header = ({ page }) => (
   <>
-    <header className='bg-gray-600 pb-2 pt-6 px-4'>
+    <header
+      className={classnames('bg-gray-600 pb-2 pt-6 px-4', {
+        'rounded-br-full': page !== 'home',
+      })}
+    >
       <div className='flex justify-center mb-4'>
         <Link href='/'>
           <a className='flex items-center hover:pointer'>
@@ -28,17 +33,26 @@ const Header = ({ children }) => (
         </Link>
       </div>
 
-      {children}
+      {page === 'home' ? (
+        <p className='max-w-screen-sm mx-auto text-gray-300'>
+          Search for food items below and find out whether they are considered
+          low or high{' '}
+          <Link href='about'>
+            <a className='underline'>FODMAP foods</a>
+          </Link>{' '}
+          that could impact your digestion.
+        </p>
+      ) : null}
     </header>
   </>
 );
 
 Header.propTypes = {
-  children: PropTypes.object,
+  page: PropTypes.string,
 };
 
 Header.defaultProps = {
-  children: null,
+  page: null,
 };
 
 export default Header;

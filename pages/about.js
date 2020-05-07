@@ -1,13 +1,9 @@
-import Footer from '../components/Footer';
 import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 export default function About() {
   return (
-    <>
-      <div className='bg-pink-400 h-2 w-full fixed top-0 left-0 z-10'></div>
-
-      <Header />
-
+    <Layout page='about'>
       <main>
         <div className='px-4 py-8'>
           <div className='max-w-screen-sm mx-auto'>
@@ -15,8 +11,6 @@ export default function About() {
           </div>
         </div>
       </main>
-
-      <Footer />
-    </>
+    </Layout>
   );
 }

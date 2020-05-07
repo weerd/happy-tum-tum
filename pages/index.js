@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import classnames from 'classnames';
 
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import Layout from '../components/Layout';
 import foods from '../resources/data/foods';
 import FoodItem from '../components/FoodItem/FoodItem';
 import SearchForm from '../components/SearchForm/SearchForm';
@@ -34,20 +32,7 @@ export default function Index({ foods }) {
   };
 
   return (
-    <>
-      <div className='bg-pink-400 h-2 w-full fixed top-0 left-0 z-10'></div>
-
-      <Header>
-        <p className='max-w-screen-sm mx-auto text-gray-300'>
-          Search for food items below and find out whether they are considered
-          low or high{' '}
-          <Link href='about'>
-            <a className='underline'>FODMAP foods</a>
-          </Link>{' '}
-          that could impact your digestion.
-        </p>
-      </Header>
-
+    <Layout page='home'>
       <main>
         <SearchForm
           inputText={searchInput}
@@ -67,9 +52,7 @@ export default function Index({ foods }) {
           ) : null}
         </div>
       </main>
-
-      <Footer />
-    </>
+    </Layout>
   );
 }
 
