@@ -1,13 +1,13 @@
-const withCSS = require('@zeit/next-css');
-const withPlugins = require('next-compose-plugins');
+module.exports = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: {
+        test: /\.(js|ts)x?$/,
+      },
+      use: ['@svgr/webpack', 'url-loader'],
+    });
 
-const nextConfig = {
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/happy-tum-tum' : '',
-  exportPathMap: function() {
-    return {
-      '/': { page: '/' },
-    };
+    return config;
   },
 };
-
-module.exports = withPlugins([withCSS()], nextConfig);
