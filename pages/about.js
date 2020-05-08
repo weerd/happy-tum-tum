@@ -5,11 +5,15 @@ export default function About() {
   return (
     <Layout page='about'>
       <main>
-        <div className='px-4 py-8'>
+        <article className='px-4 py-8'>
           <div className='max-w-screen-sm mx-auto'>
-            <p>About</p>
+            <h1 className='font-bold mb-6 text-2xl text-cream-800'>About</h1>
+
+            <p>
+              <em>more to come...</em>
+            </p>
           </div>
-        </div>
+        </article>
       </main>
     </Layout>
   );

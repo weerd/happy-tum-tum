@@ -5,11 +5,7 @@ import PropTypes from 'prop-types';
 
 const Header = ({ page }) => (
   <>
-    <header
-      className={classnames('bg-gray-600 pb-2 pt-6 px-4', {
-        'rounded-br-full': page !== 'home',
-      })}
-    >
+    <header className='bg-gray-600 pb-2 pt-6 px-4'>
       <div className='flex justify-center mb-4'>
         <Link href='/'>
           <a className='flex items-center hover:pointer'>
