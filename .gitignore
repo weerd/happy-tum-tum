@@ -1,2 +1,10 @@
-.next/
-node_modules/
+# dependencies
+/node_modules
+/out
+
+# next.js
+/.next
+/out
+
+# temporary
+/_old

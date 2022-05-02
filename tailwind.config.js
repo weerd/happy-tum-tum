@@ -1,10 +1,16 @@
-const { colors } = require('tailwindcss/defaultTheme');
+const colors = require('tailwindcss/colors');
 
 module.exports = {
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}',
+    './components/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     colors: {
-      transparent: colors.transparent,
-      current: colors.current,
+      fuchsia: '#ff00ff', // @TEMP!
+
+      transparent: 'transparent',
+      current: 'currentColor',
 
       black: colors.black,
       white: colors.white,
@@ -59,6 +65,5 @@ module.exports = {
     },
     extend: {},
   },
-  variants: {},
   plugins: [],
 };

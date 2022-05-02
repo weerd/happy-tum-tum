@@ -1,65 +1,45 @@
+import Head from 'next/head';
 import Link from 'next/link';
-import { useState } from 'react';
 
-import Layout from '../components/Layout';
-import foods from '../resources/data/foods';
-import FoodItem from '../components/FoodItem/FoodItem';
-import SearchForm from '../components/SearchForm/SearchForm';
+import Layout from '../components/Layout/Layout';
+import FoodSearchFilter from '../components/FoodSearchFilter/FoodSearchFilter';
 
-export default function Index({ foods }) {
-  const [searchInput, setSearchInput] = useState('');
-  const [foodList, setFoodList] = useState(foods);
+import foodData from '../resources/data/foods';
 
-  const findMatches = (wordToMatch, itemList) => {
-    // @TODO: remove symbols since it breaks the search
-    return itemList.filter((item) => {
-      const regex = new RegExp(wordToMatch, 'gi');
-
-      return item.name.match(regex) || item.category.match(regex);
-    });
-  };
-
-  const handleOnChange = (event) => {
-    const matches = findMatches(event.target.value, foods);
-
-    setSearchInput(event.target.value);
-
-    setFoodList(matches);
-  };
-
-  const handleOnSubmit = (event) => {
-    event.preventDefault();
-  };
-
+export default function Home({ foodData }) {
   return (
-    <Layout page='home'>
-      <main>
-        <SearchForm
-          inputText={searchInput}
-          onChange={handleOnChange}
-          onSubmit={handleOnSubmit}
-        />
+    <>
+      <Layout>
+        <Head>
+          <title>FODMAP Food Reference | Happy Tum Tum </title>
+        </Head>
 
-        <div className='px-4 py-8'>
-          {foodList ? (
-            <ul className='max-w-screen-sm mx-auto'>
-              {foodList.map((food, index) => (
-                <li key={index} className='mb-4'>
-                  <FoodItem food={food} />
-                </li>
-              ))}
-            </ul>
-          ) : null}
+        <div className="bg-gray-600">
+          <p className="max-w-screen-sm mx-auto text-gray-300">
+            Search for food items below and find out whether they are considered low or high{' '}
+            <Link href="/about">
+              <a className="underline">FODMAP foods</a>
+            </Link>{' '}
+            that could impact your digestion.
+          </p>
         </div>
-      </main>
-    </Layout>
+
+        <FoodSearchFilter data={foodData} />
+
+        <p>results go here...</p>
+      </Layout>
+    </>
   );
 }
 
 export async function getStaticProps() {
+  // Export foods list in alphabetical order.
+  // @TODO: Potentially use getInitialProps that runs for App on the server first?
+  console.log(foodData);
+
   return {
     props: {
-      foods,
+      foodData,
     },
   };
 }

@@ -1,20 +1,20 @@
-import Header from '../components/Header';
-import Layout from '../components/Layout';
+import Head from 'next/head';
+
+import Layout from '../components/Layout/Layout';
 
 export default function About() {
   return (
-    <Layout page='about'>
-      <main>
-        <article className='px-4 py-8'>
-          <div className='max-w-screen-sm mx-auto'>
-            <h1 className='font-bold mb-6 text-2xl text-cream-800'>About</h1>
+    <Layout>
+      <Head>
+        <title>About | Happy Tum Tum </title>
+      </Head>
 
-            <p>
-              <em>more to come...</em>
-            </p>
-          </div>
-        </article>
-      </main>
+      <h1>About</h1>
+
+      <p>
+        Happy Tum Tum is a small app to help quickly look up different foods and
+        see if they are considered high FODMAP foods.
+      </p>
     </Layout>
   );
 }

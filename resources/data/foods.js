@@ -1422,8 +1422,7 @@ const foods = [
     servingSize: null,
   },
   {
-    name:
-      'worcestershire sauce – has onion and garlic but very very low amount making it low FODMAP  ',
+    name: 'worcestershire sauce – has onion and garlic but very very low amount making it low FODMAP  ',
     category: '',
     rating: 'low',
     servingSize: null,
@@ -1465,8 +1464,7 @@ const foods = [
     servingSize: null,
   },
   {
-    name:
-      'espresso coffee, regular or decaffeinated, with up to 250ml lactose free milk',
+    name: 'espresso coffee, regular or decaffeinated, with up to 250ml lactose free milk',
     category: '',
     rating: 'low',
     servingSize: null,
@@ -1478,8 +1476,7 @@ const foods = [
     servingSize: null,
   },
   {
-    name:
-      'instant coffee, regular or decaffeinated, with up to 250ml lactose free milk',
+    name: 'instant coffee, regular or decaffeinated, with up to 250ml lactose free milk',
     category: '',
     rating: 'low',
     servingSize: null,
@@ -1545,15 +1542,13 @@ const foods = [
     servingSize: null,
   },
   {
-    name:
-      'sugar free fizzy drinks / soft drinks / soda – such as diet coke, in low quantities as aspartame and acesulfame k can be irritants',
+    name: 'sugar free fizzy drinks / soft drinks / soda – such as diet coke, in low quantities as aspartame and acesulfame k can be irritants',
     category: '',
     rating: 'low',
     servingSize: null,
   },
   {
-    name:
-      'sugar fizzy drinks / soft drinks / soda that do no contain hfcs such as lemonade, cola. limit intake due to these drinks being generally unhealthy and can cause gut irritation',
+    name: 'sugar fizzy drinks / soft drinks / soda that do no contain hfcs such as lemonade, cola. limit intake due to these drinks being generally unhealthy and can cause gut irritation',
     category: '',
     rating: 'low',
     servingSize: null,
@@ -1734,12 +1729,6 @@ const foods = [
   },
   {
     name: 'soy protein (avoid soya beans)',
-    category: '',
-    rating: 'low',
-    servingSize: null,
-  },
-  {
-    name: 'swiss cheese',
     category: '',
     rating: 'low',
     servingSize: null,
@@ -2136,12 +2125,6 @@ const foods = [
   },
   {
     name: 'salt',
-    category: '',
-    rating: 'low',
-    servingSize: null,
-  },
-  {
-    name: 'soybean oil',
     category: '',
     rating: 'low',
     servingSize: null,
@@ -2901,15 +2884,8 @@ const foods = [
     servingSize: null,
   },
   {
-    name:
-      'sugar free sweets containing polyols – usually ending in -ol or isomalt',
+    name: 'sugar free sweets containing polyols – usually ending in -ol or isomalt',
     category: '',
-    rating: 'high',
-    servingSize: null,
-  },
-  {
-    name: 'inulin',
-    category: 'sweeteners',
     rating: 'high',
     servingSize: null,
   },
@@ -2971,9 +2947,9 @@ const foods = [
   {
     name: 'inulin',
     description: 'may be hiding in yoghurts, snack bars etc.',
-    category: '',
+    category: 'sweeteners',
     rating: 'high',
-    servingSize: '',
+    servingSize: null,
   },
   {
     name: 'oligofructose',
@@ -3037,8 +3013,7 @@ const foods = [
     servingSize: '',
   },
   {
-    name:
-      'meal replacement drinks containing milk based products e.g. Ensure, Slim Fast',
+    name: 'meal replacement drinks containing milk based products e.g. Ensure, Slim Fast',
     category: '',
     rating: 'high',
     servingSize: '',
@@ -3164,12 +3139,6 @@ const foods = [
     servingSize: null,
   },
   {
-    name: 'cream',
-    category: '',
-    rating: 'high',
-    servingSize: null,
-  },
-  {
     name: 'custard',
     category: '',
     rating: 'high',
@@ -3237,8 +3206,4 @@ const foods = [
   },
 ];
 
-// Export foods list in alphabetical order.
-// @TODO: Potentially use getInitialProps that runs for App on the server first?
-export default foods.sort((item1, item2) => {
-  return item1.name < item2.name ? -1 : item1.name > item2.name ? 1 : 0;
-});
+export default foods;
