@@ -1,11 +1,28 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useEffect, useState } from 'react';
 
 import Results from '../Results/Results';
+import { useDebounce } from '../../helpers/useDebounce';
 
 export default function FoodSearchFilter({ data }) {
   const [foods, setFoods] = useState(data);
 
   const [searchInput, setSearchInput] = useState('');
+
+  const [debouncedInput] = useDebounce(searchInput);
+
+  useEffect(() => {
+    // Only run the effect (filtering list) if the debouncedInput changes.
+    // Will only re-render if the input actually changed (character added/removed).
+    if (debouncedInput) {
+      const matches = findMatches(searchInput, data);
+
+      setFoods(matches);
+    } else {
+      setFoods(data);
+    }
+  }, [debouncedInput]);
 
   function findMatches(query, list) {
     const regex = new RegExp(query, 'gi');
@@ -16,13 +33,9 @@ export default function FoodSearchFilter({ data }) {
   }
 
   function handleOnChange(e) {
-    setSearchInput(e.target.value);
-
     const sanitizedValue = e.target.value.replace(/[^a-z\s]/gi, '');
 
-    const matches = findMatches(sanitizedValue, data);
-
-    setFoods(matches);
+    setSearchInput(sanitizedValue);
   }
 
   return (
@@ -34,7 +47,7 @@ export default function FoodSearchFilter({ data }) {
           // Allow submitting the form so it works with the enter key.
           // Maybe drop cursor to first item in list when hitting enter key?
 
-          console.log(searchInput);
+          console.log('Form submitted and searching for... ', searchInput);
         }}
       >
         <div>

@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 import { useEffect, useState } from 'react';
 
-export function useDebounce(value, delay, setImmediately = false) {
+export function useDebounce(value, delay = 500, setImmediately = false) {
   const [debouncedValue, setDebouncedValue] = useState(value);
 
   useEffect(() => {
@@ -21,5 +23,5 @@ export function useDebounce(value, delay, setImmediately = false) {
     };
   }, [value]);
 
-  return debouncedValue;
+  return [debouncedValue];
 }

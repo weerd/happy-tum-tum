@@ -1,11 +1,11 @@
-export default function Results({ foods }) {
+export default function Results({ foods = [] }) {
   return foods.length ? (
-    <ul>
+    <ul data-testid="results">
       {foods.map((food) => (
         <li key={food.name}>{food.name}</li>
       ))}
     </ul>
   ) : (
-    <div>Sorry, no items match your search.</div>
+    <div data-testid="no-results">Sorry, no items match your search.</div>
   );
 }
